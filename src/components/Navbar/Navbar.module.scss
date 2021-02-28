@@ -1,0 +1,149 @@
+.nav {
+    width: 100%;
+    max-width: 1440px;
+    padding: 2% 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    transition: all .3s .1s ease-in-out;
+    padding: 0 2%;
+}
+
+.navbar-item {
+    font-family: inherit;
+    font-size: 14px;
+    margin: 0 1rem;
+    font-weight: 700;
+}
+
+.navbar-link {
+    text-decoration: none;
+    font-family: inherit;
+    color: hsl(233, 12%, 13%);
+    transition: all .25s ease;
+    cursor: pointer;
+
+    &:hover {
+        color: hsl(227, 12%, 61%);
+    }
+}
+
+.logo {
+    margin-top: 1rem;
+}
+
+.hamburger {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    margin: 1rem;
+    transition: transform .3s .1s ease-in-out, visibility 0s .4s;
+    display: none;
+    visibility: hidden;
+}
+
+  
+.hamburger-box {
+    width: 20px;
+    height: 20px;
+    display: block;
+    visibility: hidden;
+}
+  
+@mixin hamburger-line {
+    width: 20px;
+    height: 2px;
+    background-color: hsl(233, 12%, 13%);
+    position: absolute;
+}
+  
+.hamburger-inner {
+    @include hamburger-line;
+    
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color .1s .2s ease-in-out;
+}
+  
+.hamburger-inner::before,
+.hamburger-inner::after {
+    @include hamburger-line;
+    
+    content: '';
+    right: 0;
+    transition: transform .2s .2s ease-in-out;
+} 
+  
+.hamburger-inner::before {
+    top: -6px;
+}
+
+.hamburger-inner::after {
+    top: 6px;
+}
+  
+.hamburger-active .hamburger-inner {
+    background-color: transparent;
+}
+  
+.hamburger-active .hamburger-inner:before {
+    transform: translateY(6px) rotate(45deg);
+}
+  
+.hamburger-active .hamburger-inner:after {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (max-width: 914px) {
+    .nav {
+      position: relative;
+    }
+    
+    .hamburger, .hamburger-box {
+        visibility: visible;
+        display: block;
+        z-index: 4;
+    }
+
+    .navbar {
+        background: white;
+        flex-direction: column;
+        padding: 1rem;
+        position: absolute;
+        top: -500%;
+        left: 0;
+        right: 0;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 5px;
+        transition: all .3s .1s ease-in-out;
+        z-index: 5;
+    }
+
+    .logo {
+      margin-left: .4rem;
+    }
+
+    .navbar-active {
+        top: 4rem;
+        box-shadow: 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-item {
+      margin-top: 1rem;
+    }
+}

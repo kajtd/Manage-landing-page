@@ -1,0 +1,30 @@
+.button {
+    padding: 8px 22px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 12px;
+    border: none;
+    background: hsl(12, 88%, 59%);
+    box-shadow: 1px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.secondary {
+    @extend .button;
+    background: white;
+    color: hsl(12, 88%, 59%);
+}
+
+@media (max-width: 914px) {
+    .nav-button {
+        display: none;
+        visibility: hidden;
+    }
+}

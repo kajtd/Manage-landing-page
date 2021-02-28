@@ -1,0 +1,135 @@
+.footer {
+    width: 100%;
+    background: hsl(233, 12%, 13%);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    padding: 4rem;
+}
+
+.socials-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.logo path {
+    fill: white;
+}
+
+.socials {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 4rem;
+}
+
+.social-icon {
+    cursor: pointer;
+    
+    path {
+        transition: all .25s ease-in-out;
+    }
+
+    &:hover { 
+        path {
+            fill: hsl(12, 88%, 59%);
+        } 
+    }
+
+}
+
+.links {
+    list-style: none;
+    column-count: 2;
+    max-width: 100%;
+
+    .link {
+        color: white;
+        font-size: 14px;
+        font-weight: 300;
+        margin: 0 4rem;
+        margin-bottom: 1rem;
+        transition: all .25s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            color: hsl(12, 88%, 59%);
+        }
+    }
+}
+
+.newsletter-wrapper {
+    padding-right: 2rem;
+
+    .copyrights {
+        margin-top: 2rem;
+        color: hsl(233, 8%, 62%);
+        font-size: 12px;
+        font-weight: 300;
+    }
+}
+
+.newsletter {
+    box-shadow: 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 8px;
+    font-size: 12px;
+    font-family: inherit;
+    margin-right: .25rem;
+    border: none;
+    border-radius: 16px;
+    background: white;
+}
+
+
+@media(max-width: 914px) {
+    .footer {
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        padding: 2rem;
+        padding-bottom: 4rem;
+    }
+
+    .socials-wrapper {
+        flex-direction: column-reverse;
+    }
+
+    .socials {
+        margin-top: 2rem;
+    }
+
+    .social-icon {
+        margin: auto 1rem;
+    }
+
+    .links {
+        .link {
+            margin: 2rem 1rem;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .logo {
+        align-self: center;
+        margin-top: 2rem;
+    }
+
+    .newsletter-wrapper {
+        margin-bottom: 0rem;
+        padding: 0;
+    }
+    
+    .copyrights {
+        position: relative;
+        left: 0;
+        top: 320px;
+    }
+}
